@@ -5,7 +5,6 @@ namespace SolidPrinciples.OCP.Example1
         private readonly DataStorageBase _dataStorage;
         private readonly SimpleDocumentDeserializer _deserializer;
         private readonly ISimpleDocumentSerializer _serializer;
-        
 
         public FormatConverter()
         {

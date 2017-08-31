@@ -12,8 +12,8 @@ namespace SolidPrinciples.SRP.Example1.Refactored
             var targetFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../data/document1.json");
 
             string simpleDocumentAsXml = GetFileContent(sourceFilePath);
-            var simpleDocument = DeserializeSimpleDocumentFromXml(simpleDocumentAsXml);
-            var simpleDocumentAsJson = SerializeSimpleDocumentToJson(simpleDocument);
+            var simpleDocument = DeserializeFromXml(simpleDocumentAsXml);
+            var simpleDocumentAsJson = SerializeToJson(simpleDocument);
             SaveToFile(simpleDocumentAsJson, targetFilePath);
         }
 
@@ -26,7 +26,7 @@ namespace SolidPrinciples.SRP.Example1.Refactored
             }
         }
 
-        private static SimpleDocument DeserializeSimpleDocumentFromXml(string simpleDocumentAsXml)
+        private static SimpleDocument DeserializeFromXml(string simpleDocumentAsXml)
         {
             var simpleDocumentAsxDocument = XDocument.Parse(simpleDocumentAsXml);
             return new SimpleDocument
@@ -36,7 +36,7 @@ namespace SolidPrinciples.SRP.Example1.Refactored
             };
         }
 
-        private static string SerializeSimpleDocumentToJson(SimpleDocument simpleDocument)
+        private static string SerializeToJson(SimpleDocument simpleDocument)
         {
             return JsonConvert.SerializeObject(simpleDocument);
         }
