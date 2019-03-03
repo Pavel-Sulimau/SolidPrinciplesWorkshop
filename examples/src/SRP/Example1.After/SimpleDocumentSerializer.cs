@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace SolidPrinciples.SRP.Example1.SRP
 {
@@ -6,7 +7,11 @@ namespace SolidPrinciples.SRP.Example1.SRP
     {
         public string SerializeToJson(SimpleDocument simpleDocument)
         {
-            return JsonConvert.SerializeObject(simpleDocument);
+            var settings = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
+            return JsonConvert.SerializeObject(simpleDocument, settings);
         }
     }
 }

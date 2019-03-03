@@ -13,7 +13,7 @@ namespace SolidPrinciples.OCP.Example1
             _serializer = new CamelCaseJsonDocumentSerializer();
         }
 
-        public void ConvertFormat(string sourceDataKey, string targetDataKey)
+        public void Convert(string sourceDataKey, string targetDataKey)
         {
             string simpleDocumentAsString = _dataStorage.GetData(sourceDataKey);
 

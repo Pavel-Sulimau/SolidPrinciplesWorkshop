@@ -1,6 +1,7 @@
 using System.IO;
 using System.Xml.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace SolidPrinciples.SRP.Example1
 {
@@ -25,7 +26,11 @@ namespace SolidPrinciples.SRP.Example1
                 Text = simpleDocumentAsxDocument.Root.Element(nameof(SimpleDocument.Text).ToLower()).Value
             };
 
-            var simpleDocumentAsJson = JsonConvert.SerializeObject(simpleDocument);
+            var settings = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
+            var simpleDocumentAsJson = JsonConvert.SerializeObject(simpleDocument, settings);
 
             using (var outputStream = File.Open(targetFilePath, FileMode.Create, FileAccess.Write))
             using (var outputStreamWriter = new StreamWriter(outputStream))

@@ -16,7 +16,7 @@ namespace SolidPrinciples.LSP.Example2
         [Theory, MemberData(nameof(CarsWithoutFuel))]
         public void StartEngine_DoesNotHaveFuel_ShouldThrowOutOfFuelException(Car car)
         {
-            Assert.Throws(typeof(OutOfFuelException), () => car.StartEngine());
+            Assert.Throws<OutOfFuelException>(() => car.StartEngine());
         }
 
         [Theory, MemberData(nameof(PaintedCars))]
@@ -28,22 +28,22 @@ namespace SolidPrinciples.LSP.Example2
         public static IEnumerable<object[]> CarsWithFuel { get; } = new[]
             {
                 new object[] { new Car() },
-                //new object[] { new CrimeBossCar(color: "Black", hasFuel: true, hasBomb: true) }, // Throws a new type of exceptions 
-                //new object[] { new StolenCar("Blue", true) }, // Precodition strengthened
-                //new object[] { new BrokenCar(color: "Black", hasFuel: true) } // Postconditions weakened
+                // new object[] { new CrimeBossCar(color: "Black", hasFuel: true, hasBomb: true) }, // Throws a new type of exceptions.
+                // new object[] { new StolenCar("Blue", true) }, // Precodition strengthened.
+                // new object[] { new BrokenCar(color: "Black", hasFuel: true) } // Postconditions weakened.
             };
 
         public static IEnumerable<object[]> CarsWithoutFuel { get; } = new[]
             {
                 new object[] { new Car(hasFuel: false) },
-                //new object[] { new BrokenCar(color: "Black", hasFuel: false) }, // Postconditions weakened
-                //new object[] { new CrimeBossCar(color: "Black", hasFuel: false, hasBomb: true) } // Throws a new type of exceptions 
+                // new object[] { new BrokenCar(color: "Black", hasFuel: false) }, // Postconditions weakened.
+                // new object[] { new CrimeBossCar(color: "Black", hasFuel: false, hasBomb: true) } // Throws a new type of exceptions.
             };
 
         public static IEnumerable<object[]> PaintedCars { get; } = new[]
             {
                 new object[] { new Car("Red", hasFuel: false), "Red" },
-                //new object[] { (new ChameleonCar("Orange", hasFuel: false)).SetTemperature(5), "Orange" } // Changing invariants
+                // new object[] { (new ChameleonCar("Orange", hasFuel: false)).SetTemperature(5), "Orange" } // Changing invariants.
             };
     }
 }

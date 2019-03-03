@@ -10,7 +10,7 @@ namespace SolidPrinciples.SRP.Example1.SRP
             var targetFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../data/document1.json");
 
             var formatConverter = new FormatConverter();
-            formatConverter.ConvertFormat(sourceFilePath, targetFilePath);
+            formatConverter.Convert(sourceFilePath, targetFilePath);
         }
     }
 }

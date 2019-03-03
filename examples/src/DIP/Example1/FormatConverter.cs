@@ -19,7 +19,7 @@ namespace SolidPrinciples.DIP.Example1
             _dataPersister = dataPersister;
         }
 
-        public void ConvertFormat(string sourceFileName, string targetFileName)
+        public void Convert(string sourceFileName, string targetFileName)
         {
             string simpleDocumentAsString = _dataRetriever.GetData(sourceFileName);
 

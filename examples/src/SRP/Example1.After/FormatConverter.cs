@@ -13,7 +13,7 @@ namespace SolidPrinciples.SRP.Example1.SRP
             _serializer = new SimpleDocumentSerializer();
         }
 
-        public void ConvertFormat(string sourceFilePath, string targetFilePath)
+        public void Convert(string sourceFilePath, string targetFilePath)
         {
             string simpleDocumentAsXml = _fileSystemStorage.GetData(sourceFilePath);
             var simpleDocument = _deserializer.DeserializeFromXml(simpleDocumentAsXml);

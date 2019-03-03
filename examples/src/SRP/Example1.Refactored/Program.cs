@@ -1,6 +1,7 @@
 using System.IO;
 using System.Xml.Linq;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace SolidPrinciples.SRP.Example1.Refactored
 {
@@ -38,7 +39,11 @@ namespace SolidPrinciples.SRP.Example1.Refactored
 
         private static string SerializeToJson(SimpleDocument simpleDocument)
         {
-            return JsonConvert.SerializeObject(simpleDocument);
+            var settings = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
+            return JsonConvert.SerializeObject(simpleDocument, settings);
         }
 
         private static void SaveToFile(string content, string targetFilePath)

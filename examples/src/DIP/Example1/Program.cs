@@ -15,7 +15,7 @@ namespace SolidPrinciples.DIP.Example1
                 new CamelCaseJsonDocumentSerializer(),
                 new FileSystemStorage());
 
-            formatConverter.ConvertFormat(sourceFilePath, targetFilePath);
+            formatConverter.Convert(sourceFilePath, targetFilePath);
         }
     }
 }

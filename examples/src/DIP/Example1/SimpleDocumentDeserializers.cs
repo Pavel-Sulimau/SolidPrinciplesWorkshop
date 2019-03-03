@@ -19,7 +19,7 @@ namespace SolidPrinciples.DIP.Example1
     {
         public override SimpleDocument Deserialize(string input)
         {
-            // ToDo: parse title from the first string, parse text from the second
+            // Let's asume we have parsed the data fron input stirng.
             return new SimpleDocument
             {
                 Title = "Mock title",

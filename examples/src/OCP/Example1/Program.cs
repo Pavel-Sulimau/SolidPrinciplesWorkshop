@@ -10,7 +10,7 @@ namespace SolidPrinciples.OCP.Example1
             var targetFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../Data/Document1.json");
 
             var formatConverter = new FormatConverter();
-            formatConverter.ConvertFormat(sourceFilePath, targetFilePath);
+            formatConverter.Convert(sourceFilePath, targetFilePath);
         }
     }
 }
