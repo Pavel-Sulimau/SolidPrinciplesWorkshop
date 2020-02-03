@@ -1,17 +1,16 @@
 {
     "version": "2.0.0",
-    "command": "dotnet",
-    "args": [],
     "tasks": [
         {
             "label": "build",
+            "command": "dotnet",
+            "type": "process",
             "args": [
-                "${workspaceRoot}/SRP.Example1.Refactored.csproj"
+                "build",
+                "${workspaceRoot}/SRP.Example1.Refactored.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
             "problemMatcher": "$msCompile"
         }
     ]

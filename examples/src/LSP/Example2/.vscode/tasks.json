@@ -1,17 +1,16 @@
 {
     "version": "2.0.0",
-    "command": "dotnet",
-    "args": [],
     "tasks": [
         {
             "label": "build",
+            "command": "dotnet",
+            "type": "process",
             "args": [
-                "${workspaceRoot}/LSP.Example2.csproj"
+                "build",
+                "${workspaceRoot}/LSP.Example2.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
             "problemMatcher": "$msCompile"
         }
     ]

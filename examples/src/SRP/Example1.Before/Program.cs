@@ -9,8 +9,8 @@ namespace SolidPrinciples.SRP.Example1
     {
         static void Main(string[] args)
         {
-            var sourceFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../data/document1.xml");
-            var targetFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../data/document1.json");
+            var sourceFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../../../../data/document1.xml");
+            var targetFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../../../../data/document1.json");
 
             string simpleDocumentAsXml;
             using (var sourceStream = File.OpenRead(sourceFilePath))
@@ -38,5 +38,12 @@ namespace SolidPrinciples.SRP.Example1
                 outputStreamWriter.Write(simpleDocumentAsJson);
             }
         }
+    }
+
+    public class SimpleDocument
+    {
+        public string Title { get; set; }
+
+        public string Text { get; set; }
     }
 }

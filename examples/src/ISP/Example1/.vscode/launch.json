@@ -6,12 +6,11 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/bin/Debug/netcoreapp2.0/ISP.Example1.dll",
+            "program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/ISP.Example1.dll",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/bin/Debug/netcoreapp3.1/",
             "console": "internalConsole",
-            "stopAtEntry": false,
-            "internalConsoleOptions": "openOnSessionStart"
+            "stopAtEntry": false
         },
         {
             "name": ".NET Core Attach",

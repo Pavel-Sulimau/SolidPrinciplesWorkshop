@@ -9,8 +9,8 @@ namespace SolidPrinciples.SRP.Example1.Refactored
     {
         static void Main(string[] args)
         {
-            var sourceFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../data/document1.xml");
-            var targetFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../data/document1.json");
+            var sourceFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../../../../data/document1.xml");
+            var targetFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../../../../data/document1.json");
 
             string simpleDocumentAsXml = GetFileContent(sourceFilePath);
             var simpleDocument = DeserializeFromXml(simpleDocumentAsXml);

@@ -6,8 +6,8 @@ namespace SolidPrinciples.DIP.Example1
     {
         static void Main(string[] args)
         {
-            var sourceFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../data/document1.xml");
-            var targetFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../data/document1.json");
+            var sourceFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../../../../data/document1.xml");
+            var targetFilePath = Path.Combine(Directory.GetCurrentDirectory(), "../../../../../../data/document1.json");
 
             var formatConverter = new FormatConverter(
                 new FileSystemStorage(),
