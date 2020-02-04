@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace SolidPrinciples.SRP.Example1.SRP
+namespace SolidPrinciples.SRP.Example1.After
 {
     public class SimpleDocumentSerializer
     {

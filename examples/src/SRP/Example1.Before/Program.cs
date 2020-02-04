@@ -3,7 +3,7 @@ using System.Xml.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace SolidPrinciples.SRP.Example1
+namespace SolidPrinciples.SRP.Example1.Before
 {
     class Program
     {
